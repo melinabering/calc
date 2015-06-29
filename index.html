@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cost Calculator</title>
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<!-- Grid Rotator -->
+<link rel="stylesheet" type="text/css" href="../css/animate.css">
+<script type="text/javascript" src="js/modernizr.custom.26633.js"></script>
+<link rel="stylesheet" type="text/css" href="calc.css">
+</head>
+
+<body>
+<div class="container form-horizontal">
+  <h1>Enter your actual cost to see how much we can save you!</h1>
+  <h2>Driver Salary Summary</h2>
+  <div class="row"> 
+    <!-- column 1 -->
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="numDrivers" class="col-sm-3 control-label"># of Driver(s)</label>
+        <div class="col-sm-9 input-group">
+          <input type="text" class="form-control" id="numDrivers" placeholder="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="hourlyRate" class="col-sm-3 control-label">Hourly Rate</label>
+        <div class="col-sm-9 input-group">
+          <div class="input-group-addon">$</div>
+		  <input type="text" class="form-control" id="hourlyRate" placeholder="$10.00">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="regHours" class="col-sm-3 control-label">Regular Hours</label>
+        <div class="col-sm-9 input-group">
+          <input type="text" class="form-control" id="regHours" placeholder="40">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="weeklyAvgPay" class="col-sm-3 control-label">Weekly Avg. Pay</label>
+        <div class="col-sm-9 input-group">
+        <div class="input-group-addon">$</div>
+          <input type="text" class="form-control" id="weeklyAvgPay" placeholder="{{weeklyAvgPay}}">
+        </div>
+      </div>
+    </div>
+    
+    <!-- column 2 -->
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="numDrivers" class="col-sm-3 control-label">O/T Rate</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="numDrivers" placeholder="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="hourlyRate" class="col-sm-3 control-label">O/T Hours</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="hourlyRate" placeholder="$10.00">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="regHours" class="col-sm-3 control-label">Regular Hours</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="regHours" placeholder="40">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+  
+  <table class="vehicleTable">
+    <tr>
+      <td>Wages (including overtime)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Social Security & Medicare Contribution</td>
+      <td></td>
+      <td id="SSaMedicareTD"></td>
+    </tr>
+    <tr>
+      <td>Unemployment Compensation State & Federal</td>
+      <td></td>
+      <td id="unemploymentTD"></td>
+    </tr>
+    <tr>
+      <td>Workman's Compensation</td>
+      <td></td>
+      <td id="workmansCompTD"></td>
+    </tr>
+    <tr>
+      <td>Misc./Adm. Hiring/Drug Screen/Training</td>
+      <td></td>
+      <td id="miscTD"></td>
+    </tr>
+    <tr>
+      <td>Vacation/Sick Leave</td>
+      <td></td>
+      <td id="ptoTD"></td>
+    </tr>
+    <tr>
+      <td>Fringe Benefits (Medical, Dental, Life)</td>
+      <td></td>
+      <td id="benefitsTD"></td>
+    </tr>
+    <tr>
+      <th>Total Monthly Employee</th>
+      <th></th>
+      <th>&nbsp;</th>
+    </tr>
+  </table>
+  <h2>Vehicle Cost Summary</h2>
+  <div class="row"> 
+    <!-- column 1 -->
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="numDrivers" class="col-sm-3 control-label"># of Driver(s)</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="numDrivers" placeholder="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="hourlyRate" class="col-sm-3 control-label">Hourly Rate</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="hourlyRate" placeholder="$10.00">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="regHours" class="col-sm-3 control-label">Regular Hours</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="regHours" placeholder="40">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="weeklyAvgPay" class="col-sm-3 control-label">Weekly Avg. Pay</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="weeklyAvgPay" placeholder="{{weeklyAvgPay}}">
+        </div>
+      </div>
+    </div>
+    
+    <!-- column 2 -->
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="numDrivers" class="col-sm-3 control-label"># of Driver(s)</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="numDrivers" placeholder="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="hourlyRate" class="col-sm-3 control-label">Hourly Rate</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="hourlyRate" placeholder="$10.00">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="regHours" class="col-sm-3 control-label">Regular Hours</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="regHours" placeholder="40">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+  
+  <table class="driverTable">
+    <tr>
+      <td>Wages (including overtime)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Social Security &amp; Medicare Contribution</td>
+      <td></td>
+      <td id="SSaMedicareTD">7.65%</td>
+    </tr>
+    <tr>
+      <td>Unemployment Compensation State &amp; Federal</td>
+      <td></td>
+      <td>1.40%</td>
+    </tr>
+    <tr>
+      <td>Workman's Compensation</td>
+      <td></td>
+      <td>13%</td>
+    </tr>
+    <tr>
+      <td>Misc./Adm. Hiring/Drug Screen/Training</td>
+      <td></td>
+      <td>0.40%</td>
+    </tr>
+    <tr>
+      <td>Vacation/Sick Leave</td>
+      <td></td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Fringe Benefits (Medical, Dental, Life)</td>
+      <td></td>
+      <td>8.5%</td>
+    </tr>
+    <tr>
+      <th>Total Monthly Employee</th>
+      <th></th>
+      <th>&nbsp;</th>
+    </tr>
+  </table>
+  
+  <!-- /.row --> 
+  
+</div>
+<footer> Footer </footer>
+<!-- jQuery --> 
+<script src="../js/jquery.js"></script> 
+
+<!-- Bootstrap Core JavaScript --> 
+<script src="../js/bootstrap.min.js"></script> 
+
+<!-- Scrolling Nav JavaScript --> 
+<script src="../js/jquery.easing.min.js"></script> 
+<script src="../js/scrolling-nav.js"></script> 
+<script src="../js/adl-script.js"></script> 
+<script src="../js/services-slider.js"></script> 
+<script src="calc.js"></script>
+</body>
+</html>

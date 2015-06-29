@@ -1,0 +1,15 @@
+/* CSS Document */
+
+table {
+    border-collapse: collapse;
+    width:100%;
+}
+
+table td, table th {
+  border:1px solid black;
+  width:auto;
+  padding:5px;
+}
+
+table tr td  { width:15% }
+table tr td:first-child  { width:70% }
