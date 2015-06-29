@@ -12,6 +12,7 @@
 </head>
 
 <body>
+<form>
 <div class="container form-horizontal">
   <h1>Enter your actual cost to see how much we can save you!</h1>
   <h2>Driver Salary Summary</h2>
@@ -19,27 +20,27 @@
     <!-- column 1 -->
     <div class="col-sm-6">
       <div class="form-group">
-        <label for="numDrivers" class="col-sm-3 control-label"># of Driver(s)</label>
-        <div class="col-sm-9 input-group">
+        <label for="numDrivers" class="col-sm-4 control-label"># of Driver(s)</label>
+        <div class="col-sm-8 input-group">
           <input type="text" class="form-control" id="numDrivers" placeholder="1">
         </div>
       </div>
       <div class="form-group">
-        <label for="hourlyRate" class="col-sm-3 control-label">Hourly Rate</label>
-        <div class="col-sm-9 input-group">
+        <label for="hourlyRate" class="col-sm-4 control-label">Hourly Rate</label>
+        <div class="col-sm-8 input-group">
           <div class="input-group-addon">$</div>
 		  <input type="text" class="form-control" id="hourlyRate" placeholder="$10.00">
         </div>
       </div>
       <div class="form-group">
-        <label for="regHours" class="col-sm-3 control-label">Regular Hours</label>
-        <div class="col-sm-9 input-group">
+        <label for="regHours" class="col-sm-4 control-label">Regular Hours</label>
+        <div class="col-sm-8 input-group">
           <input type="text" class="form-control" id="regHours" placeholder="40">
         </div>
       </div>
       <div class="form-group">
-        <label for="weeklyAvgPay" class="col-sm-3 control-label">Weekly Avg. Pay</label>
-        <div class="col-sm-9 input-group">
+        <label for="weeklyAvgPay" class="col-sm-4 control-label">Weekly Avg. Pay</label>
+        <div class="col-sm-8 input-group">
         <div class="input-group-addon">$</div>
           <input type="text" class="form-control" id="weeklyAvgPay" placeholder="{{weeklyAvgPay}}">
         </div>
@@ -49,28 +50,30 @@
     <!-- column 2 -->
     <div class="col-sm-6">
       <div class="form-group">
-        <label for="numDrivers" class="col-sm-3 control-label">O/T Rate</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="numDrivers" placeholder="1">
+        <label for="OTRate" class="col-sm-4 control-label">O/T Rate</label>
+        <div class="col-sm-8 input-group">
+          <div class="input-group-addon">$</div>
+		  <input type="text" class="form-control" id="OTRate" placeholder="$10.00">
         </div>
       </div>
       <div class="form-group">
-        <label for="hourlyRate" class="col-sm-3 control-label">O/T Hours</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="hourlyRate" placeholder="$10.00">
+        <label for="OTHours" class="col-sm-4 control-label">O/T Hours</label>
+        <div class="col-sm-8 input-group">
+          <input type="text" class="form-control" id="OTHours" placeholder="$10.00">
         </div>
       </div>
       <div class="form-group">
-        <label for="regHours" class="col-sm-3 control-label">Regular Hours</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="regHours" placeholder="40">
+        <label for="monthlyAvgPay" class="col-sm-4 control-label">Monthly Avg Pay</label>
+        <div class="col-sm-8 input-group">
+        <div class="input-group-addon">$</div>
+          <input type="text" class="form-control" id="monthlyAvgPay" placeholder="40">
         </div>
       </div>
     </div>
   </div>
   <!-- /.row -->
   
-  <table class="vehicleTable">
+  <table class="driverTable">
     <tr>
       <td>Wages (including overtime)</td>
       <td></td>
@@ -117,93 +120,88 @@
     <!-- column 1 -->
     <div class="col-sm-6">
       <div class="form-group">
-        <label for="numDrivers" class="col-sm-3 control-label"># of Driver(s)</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="numDrivers" placeholder="1">
+        <label for="vehType" class="col-sm-4 control-label">Vehicle Type</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="vehType" >
         </div>
       </div>
       <div class="form-group">
-        <label for="hourlyRate" class="col-sm-3 control-label">Hourly Rate</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="hourlyRate" placeholder="$10.00">
+        <label for="avgCost" class="col-sm-4 control-label">Avg Cost</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="avgCost" placeholder="$18000">
         </div>
       </div>
       <div class="form-group">
-        <label for="regHours" class="col-sm-3 control-label">Regular Hours</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="regHours" placeholder="40">
+        <label for="dailyMileage" class="col-sm-4 control-label">Daily Mileage</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="dailyMileage" placeholder="200">
         </div>
       </div>
-      <div class="form-group">
-        <label for="weeklyAvgPay" class="col-sm-3 control-label">Weekly Avg. Pay</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="weeklyAvgPay" placeholder="{{weeklyAvgPay}}">
-        </div>
-      </div>
+    
     </div>
     
     <!-- column 2 -->
     <div class="col-sm-6">
       <div class="form-group">
-        <label for="numDrivers" class="col-sm-3 control-label"># of Driver(s)</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="numDrivers" placeholder="1">
+        <label for="vehQty" class="col-sm-4 control-label">Qty</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="vehQty" placeholder="1">
         </div>
       </div>
       <div class="form-group">
-        <label for="hourlyRate" class="col-sm-3 control-label">Hourly Rate</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="hourlyRate" placeholder="$10.00">
+        <label for="avgMilesPerGallon" class="col-sm-4 control-label">Avg Miles/Gallon</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="avgMilesPerGallon" placeholder="15">
         </div>
       </div>
       <div class="form-group">
-        <label for="regHours" class="col-sm-3 control-label">Regular Hours</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="regHours" placeholder="40">
+        <label for="gasPricePerGallon" class="col-sm-4 control-label">Gas Price/Gallon</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="gasPricePerGallon" placeholder="$3.75">
         </div>
       </div>
     </div>
   </div>
   <!-- /.row -->
   
-  <table class="driverTable">
+  <table class="vehicleTable">
     <tr>
-      <td>Wages (including overtime)</td>
+      <td>Original cost (cash) or Loan Payment</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td>Social Security &amp; Medicare Contribution</td>
+      <td>License, title, fees &amp; permits</td>
       <td></td>
-      <td id="SSaMedicareTD">7.65%</td>
+      <td></td>
     </tr>
     <tr>
-      <td>Unemployment Compensation State &amp; Federal</td>
+      <td>Taxes (state, county, school)</td>
       <td></td>
-      <td>1.40%</td>
+      <td></td>
     </tr>
     <tr>
-      <td>Workman's Compensation</td>
+      <td>Gas Cost</td>
       <td></td>
-      <td>13%</td>
+      <td></td>
     </tr>
     <tr>
-      <td>Misc./Adm. Hiring/Drug Screen/Training</td>
+      <td>Insurance (liability, collision, cargo, etc.)</td>
       <td></td>
-      <td>0.40%</td>
+      <td></td>
     </tr>
     <tr>
-      <td>Vacation/Sick Leave</td>
+      <td>Normal Maintenance (service, parts, tires, etc.)</td>
       <td></td>
-      <td>5</td>
+      <td></td>
     </tr>
     <tr>
-      <td>Fringe Benefits (Medical, Dental, Life)</td>
+      <td>Washing/Exterior Maintenance</td>
       <td></td>
-      <td>8.5%</td>
+      <td></td>
     </tr>
     <tr>
-      <th>Total Monthly Employee</th>
+      <th>Total Monthly Vehicle</th>
       <th></th>
       <th>&nbsp;</th>
     </tr>
@@ -211,7 +209,18 @@
   
   <!-- /.row --> 
   
+  <br />
+   <table class="tallyTable">
+    <tr>
+      <th>Original cost (cash) or Loan Payment</th>
+      <th></th>
+      <th>2.50%</th>
+    </tr>
+  </table>
+  
+  
 </div>
+</form>
 <footer> Footer </footer>
 <!-- jQuery --> 
 <script src="../js/jquery.js"></script> 

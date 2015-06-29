@@ -1,5 +1,9 @@
 /* CSS Document */
 
+body{background:#a90100}
+
+.container { background: white; padding:50px; margin-top:30px; box-shadow:0 5px 15px rgba(0,0,0,0.5)}
+
 table {
     border-collapse: collapse;
     width:100%;
@@ -11,5 +15,14 @@ table td, table th {
   padding:5px;
 }
 
-table tr td  { width:15% }
-table tr td:first-child  { width:70% }
+table th {
+  background:#e0e0e0;
+  color:#333
+}
+
+table tr td,
+table tr th  { width:15% }
+
+table tr td:first-child,
+table tr th:first-child  { width:70% }
+
